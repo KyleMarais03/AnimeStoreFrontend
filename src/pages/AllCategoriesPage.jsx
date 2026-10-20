@@ -1,65 +1,56 @@
-import { Link } from "react-router-dom";
+import { ArrowRight, Boxes, Gamepad2, Gem, Home, Image, Shirt, Smartphone, Sparkles, Backpack, Footprints, NotebookPen, Crown, Palette } from "lucide-react"
+import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import { productApi } from "../services/api"
+import { categoryCoverImage, safeArray } from "../utils/helpers"
 
-const allCategoryCards = [
-  { id: "clothing", name: "Clothing", icon: "👕", description: "Streetwear essentials, statement layers, and everyday anime fits." },
-  { id: "accessories", name: "Accessories", icon: "🧢", description: "Pins, badges, jewelry, wallets, and finishing details for your fit." },
-  { id: "tech", name: "Tech", icon: "💻", description: "Phone gear, desk upgrades, and practical anime-themed extras." },
-  { id: "art", name: "Art", icon: "🎨", description: "Posters, art books, and visual pieces for walls and desks." },
-  { id: "collectibles", name: "Collectibles", icon: "🧩", description: "Figurines, stands, and premium fan favourites worth keeping close." },
-  { id: "cosplay", name: "Cosplay", icon: "🧥", description: "Outfits, props, and character-inspired pieces made for your next build." },
-  { id: "home-and-lifestyle", name: "Home & Lifestyle", icon: "🏠", description: "Desk essentials, room upgrades, and everyday pieces with anime energy." },
-  { id: "bags", name: "Bags", icon: "🎒", description: "Backpacks, totes, and functional accessories for daily carry." },
-  { id: "footwear", name: "Footwear", icon: "👟", description: "Sneakers, slides, and shoes built for comfort and streetwear style." },
-  { id: "stationery", name: "Stationery", icon: "✏️", description: "Notebooks, planners, and writing essentials for fan life." },
-  { id: "jewellery", name: "Jewellery", icon: "💍", description: "Statement rings, charms, and subtle details that elevate any fit." },
-  { id: "gaming", name: "Gaming", icon: "🎮", description: "Controller accessories, desk upgrades, and everyday play essentials." },
-  { id: "room-decor", name: "Room Decor", icon: "🖼️", description: "Wall art, accents, and decor pieces to give your space some anime vibe." },
-];
+const categoryIcons = { Clothing: Shirt, Accessories: Gem, Tech: Smartphone, Art: Palette, Collectibles: Crown, Cosplay: Sparkles, "Home & Lifestyle": Home, Bags: Backpack, Footwear: Footprints, Stationery: NotebookPen, Jewellery: Gem, Gaming: Gamepad2, "Room Decor": Image }
 
-const categoryLooks = [
-  { accent: "#49dce7", glow: "rgba(73, 220, 231, 0.22)" },
-  { accent: "#e6b85c", glow: "rgba(230, 184, 92, 0.22)" },
-  { accent: "#7cc6ff", glow: "rgba(124, 198, 255, 0.2)" },
-  { accent: "#9a7cff", glow: "rgba(154, 124, 255, 0.18)" },
-  { accent: "#62df9a", glow: "rgba(98, 223, 154, 0.18)" },
-  { accent: "#ff8ec2", glow: "rgba(255, 142, 194, 0.18)" },
-];
+const fallback = [
+  ["Clothing", "Everyday anime streetwear and layered essentials"], ["Accessories", "Pins, keychains, wallets and finishing details"], ["Tech", "Desk gear, phone pieces and gaming add-ons"], ["Art", "Posters, prints and visual wall pieces"], ["Collectibles", "Figures, stands and shelf-ready favourites"], ["Cosplay", "Character-inspired pieces for your next build"], ["Home & Lifestyle", "Room upgrades and daily-use pieces"], ["Bags", "Backpacks, totes and compact carry options"], ["Footwear", "Sneakers, slides and easy everyday pairs"], ["Stationery", "Notebooks, planning and desk supplies"], ["Jewellery", "Rings, charms and small statement pieces"], ["Gaming", "Controller and desk setup accessories"], ["Room Decor", "Wall art, displays and room accents"]
+]
 
-function AllCategoriesPage() {
+export default function AllCategoriesPage() {
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    let active = true
+    productApi.getAll()
+      .then(response => {
+        if (active) setProducts(safeArray(response.data))
+      })
+      .catch(() => {})
+    return () => { active = false }
+  }, [])
+
   return (
-    <main className="all-categories-page">
-      <section className="all-categories-header">
-        <p className="section-label">ALL CATEGORIES</p>
-        <h2>Shop every anime category</h2>
+    <div className="content-page">
+      <section className="page-intro">
+        <span className="eyebrow">CATEGORIES</span>
+        <h1>Shop by category.</h1>
+        <p>Find clothing, collectibles, art, accessories and more.</p>
       </section>
-
-      <div className="category-grid all-categories-grid">
-        {allCategoryCards.map((category, index) => {
-          const look = categoryLooks[index % categoryLooks.length];
-
+      <div className="category-grid">
+        {fallback.map(([name, description], index) => {
+          const Icon = categoryIcons[name] || Boxes
+          const image = categoryCoverImage(name, products)
           return (
-            <Link
-              key={category.id}
-              to={`/catalog?category=${category.id}`}
-              className="category-card"
-              style={{
-                "--card-accent": look.accent,
-                "--card-glow": look.glow,
-              }}
-            >
-              <div className="category-icon" aria-hidden="true">{category.icon}</div>
-              <div className="category-copy">
-                <p className="category-kicker">Category</p>
-                <h3>{category.name}</h3>
-                <p>{category.description}</p>
+            <Link key={name} to={`/catalog?category=${encodeURIComponent(name)}`} className="category-card-large">
+              <div className="category-card-cover">
+                <img src={image} alt={`${name} product`} loading="lazy" />
               </div>
-              <span className="category-link">Open</span>
+              <div className="category-index">{String(index + 1).padStart(2, "0")}</div>
+              <div className="category-icon-box"><Icon size={21} /></div>
+              <div className="category-card-copy">
+                <span className="eyebrow tiny">CATEGORY</span>
+                <h3>{name}</h3>
+                <p>{description}</p>
+              </div>
+              <ArrowRight size={18} />
             </Link>
-          );
+          )
         })}
       </div>
-    </main>
-  );
+    </div>
+  )
 }
-
-export default AllCategoriesPage;

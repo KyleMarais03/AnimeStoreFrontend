@@ -1,38 +1,36 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { LockKeyhole, Mail, UserRound } from "lucide-react"
+import { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { useAuth } from "../context/AuthContext"
 
-function SignUpPage() {
-  const { signUp } = useAuth();
-  const navigate = useNavigate();
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
+export default function SignUpPage() {
+  const { signUp } = useAuth()
+  const navigate = useNavigate()
+  const [form, setForm] = useState({ name: "", email: "", password: "", confirm: "" })
+  const [error, setError] = useState("")
+  const [busy, setBusy] = useState(false)
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    signUp(form);
-    navigate("/dashboard", { replace: true });
-  };
+  const submit = async event => {
+    event.preventDefault(); setError("")
+    if (form.password.length < 8) { setError("Password must be at least 8 characters."); return }
+    if (form.password !== form.confirm) { setError("Passwords do not match."); return }
+    setBusy(true)
+    try { await signUp(form); navigate("/dashboard", { replace: true }) } catch (err) { setError(err.message) } finally { setBusy(false) }
+  }
 
   return (
-    <section className="auth-page">
-      <form className="auth-card" onSubmit={handleSubmit}>
-        <p className="section-label">JOIN ANIME STORE</p>
-        <h2>Sign up</h2>
-        {["name", "email", "password"].map((field) => (
-          <input
-            key={field}
-            type={field === "password" ? "password" : field === "email" ? "email" : "text"}
-            placeholder={field[0].toUpperCase() + field.slice(1)}
-            value={form[field]}
-            onChange={(event) => setForm({ ...form, [field]: event.target.value })}
-            required
-          />
-        ))}
-        <button className="primary-button" type="submit">Create account</button>
-        <p>Already registered? <Link to="/signin">Sign in</Link></p>
+    <div className="auth-shell">
+      <section className="auth-visual warm"><span className="eyebrow">JOIN ANIMESTORE</span><h1>Create your<br /><em>account.</em></h1><p>Shop your favourites, save your cart and keep track of your orders.</p></section>
+      <form className="auth-panel" onSubmit={submit}>
+        <h2>Create account</h2><p className="muted">It only takes a moment.</p>
+        <label>Name<div className="input-wrap"><UserRound size={17} /><input value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} placeholder="Your name" required /></div></label>
+        <label>Email<div className="input-wrap"><Mail size={17} /><input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} placeholder="Email address" required /></div></label>
+        <label>Password<div className="input-wrap"><LockKeyhole size={17} /><input type="password" minLength={8} value={form.password} onChange={e => setForm({ ...form, password: e.target.value })} placeholder="At least 8 characters" required /></div></label>
+        <label>Confirm password<div className="input-wrap"><LockKeyhole size={17} /><input type="password" minLength={8} value={form.confirm} onChange={e => setForm({ ...form, confirm: e.target.value })} placeholder="Repeat password" required /></div></label>
+        {error && <div className="form-alert error">{error}</div>}
+        <button className="primary-button wide" disabled={busy}>{busy ? "Creating account..." : "Create account"}</button>
+        <p className="auth-switch">Already registered? <Link to="/signin">Sign in</Link></p>
       </form>
-    </section>
-  );
+    </div>
+  )
 }
-
-export default SignUpPage;

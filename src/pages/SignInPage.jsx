@@ -1,52 +1,48 @@
-import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { LockKeyhole, Mail } from "lucide-react"
+import { useState } from "react"
+import { Link, useLocation, useNavigate } from "react-router-dom"
+import { useAuth } from "../context/AuthContext"
 
-function SignInPage() {
-  const { signIn } = useAuth();
-  const navigate = useNavigate();
-  const location = useLocation();
-  const [form, setForm] = useState({ name: "", email: "", role: "customer" });
+export default function SignInPage() {
+  const { signIn } = useAuth()
+  const navigate = useNavigate()
+  const location = useLocation()
+  const [form, setForm] = useState({ email: "", password: "" })
+  const [error, setError] = useState("")
+  const [busy, setBusy] = useState(false)
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    signIn(form);
-    const destination = location.state?.from?.pathname || "/dashboard";
-    navigate(form.role === "admin" ? "/admin/dashboard" : destination, {
-      replace: true,
-    });
-  };
+  const submit = async event => {
+    event.preventDefault()
+    setError("")
+    setBusy(true)
+    try {
+      const nextUser = await signIn(form)
+      const from = location.state?.from?.pathname
+      navigate(nextUser.role === "ADMIN" ? "/admin/dashboard" : (from || "/dashboard"), { replace: true })
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setBusy(false)
+    }
+  }
 
   return (
-    <section className="auth-page">
-      <form className="auth-card" onSubmit={handleSubmit}>
-        <p className="section-label">WELCOME BACK</p>
+    <div className="auth-shell">
+      <section className="auth-visual">
+        <img src="/products/brand-icon.png" alt="AnimeStore" className="auth-brand-icon" />
+        <span className="eyebrow">ANIMESTORE</span>
+        <h1>Welcome<br /><em>back.</em></h1>
+        <p>Sign in to your account.</p>
+      </section>
+      <form className="auth-panel" onSubmit={submit}>
         <h2>Sign in</h2>
-        <input
-          placeholder="Name"
-          value={form.name}
-          onChange={(event) => setForm({ ...form, name: event.target.value })}
-          required
-        />
-        <input
-          type="email"
-          placeholder="Email address"
-          value={form.email}
-          onChange={(event) => setForm({ ...form, email: event.target.value })}
-          required
-        />
-        <select
-          value={form.role}
-          onChange={(event) => setForm({ ...form, role: event.target.value })}
-        >
-          <option value="customer">Customer</option>
-          <option value="admin">Admin</option>
-        </select>
-        <button className="primary-button" type="submit">Sign in</button>
-        <p>New to AnimeStore? <Link to="/signup">Create an account</Link></p>
+        <p className="muted">Use your AnimeStore account.</p>
+        <label>Email<div className="input-wrap"><Mail size={17} /><input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} placeholder="Email address" required /></div></label>
+        <label>Password<div className="input-wrap"><LockKeyhole size={17} /><input type="password" value={form.password} onChange={e => setForm({ ...form, password: e.target.value })} placeholder="Password" required /></div></label>
+        {error && <div className="form-alert error">{error}</div>}
+        <button className="primary-button wide" disabled={busy}>{busy ? "Signing in..." : "Sign in"}</button>
+        <p className="auth-switch">Don't have an account? <Link to="/signup">Create account</Link></p>
       </form>
-    </section>
-  );
+    </div>
+  )
 }
-
-export default SignInPage;

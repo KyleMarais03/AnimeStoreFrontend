@@ -1,105 +1,40 @@
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import api from "../utils/api";
+import { ArrowLeft, CheckCircle2, Minus, Plus, ShieldCheck, ShoppingBag, Truck } from "lucide-react"
+import { useEffect, useState } from "react"
+import { Link, useNavigate, useParams } from "react-router-dom"
+import { productApi } from "../services/api"
+import { useCart } from "../context/CartContext"
+import { useAuth } from "../context/AuthContext"
+import Loading from "../components/Loading"
+import { money, resolveImage } from "../utils/helpers"
 
-function ProductDetailsPage() {
-  const { productId } = useParams();
-  const [product, setProduct] = useState(null);
-  const [relatedProducts, setRelatedProducts] = useState([]);
-  const [error, setError] = useState("");
+export default function ProductDetailsPage() {
+  const { productId } = useParams()
+  const navigate = useNavigate()
+  const { user } = useAuth()
+  const { addToCart } = useCart()
+  const [product, setProduct] = useState(null)
+  const [quantity, setQuantity] = useState(1)
+  const [loading, setLoading] = useState(true)
+  const [busy, setBusy] = useState(false)
+  const [message, setMessage] = useState("")
+  const [error, setError] = useState("")
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const response = await api.get(`/products/${productId}`);
-        const selectedProduct = response.data;
-        setProduct(selectedProduct);
+    setLoading(true); setError("")
+    productApi.getById(productId).then(response => setProduct(response.data)).catch(err => setError(err.response?.status === 404 ? "Product not found." : "Could not load product.")).finally(() => setLoading(false))
+  }, [productId])
 
-        // Load other products from the same category to power the related-items section.
-        const productsResponse = await api.get("/products");
-        const sameCategoryProducts = productsResponse.data.filter((item) => {
-          const itemCategory = item.category?.name || "Anime Collection";
-          const selectedCategory = selectedProduct.category?.name || "Anime Collection";
-          return item.productId !== selectedProduct.productId && itemCategory === selectedCategory;
-        });
+  const add = async () => {
+    if (!user) { navigate("/signin", { state: { from: { pathname: `/products/${productId}` } } }); return }
+    try { setBusy(true); setError(""); await addToCart(product, quantity); setMessage("Added to your cart."); setTimeout(() => navigate("/cart"), 700) } catch (err) { setError(err.message) } finally { setBusy(false) }
+  }
 
-        setRelatedProducts(sameCategoryProducts.slice(0, 3));
-      } catch (requestError) {
-        console.error("Error fetching product:", requestError);
-        setError("Product could not be loaded.");
-      }
-    };
+  if (loading) return <div className="content-page"><Loading label="Loading product..." /></div>
+  if (error && !product) return <div className="content-page"><div className="form-alert error">{error}</div><Link to="/catalog" className="outline-button">Back to catalog</Link></div>
+  if (!product) return null
 
-    fetchProduct();
-  }, [productId]);
-
-  if (error) return <p className="products-message error-message">{error}</p>;
-  if (!product) return <p className="products-message">Loading product...</p>;
-
-  const image = product.productImage
-    ? `data:image/jpeg;base64,${product.productImage}`
-    : null;
-
-  const categoryName = product.category?.name || "Anime Collection";
-
+  const stock = Number(product.stock || 0)
   return (
-    <section className="product-detail-page">
-      <Link to="/catalog">← Back to catalog</Link>
-      <div className="product-detail-card">
-        <div className="product-image">
-          {image ? <img src={image} alt={product.name} /> : <span>⚔</span>}
-        </div>
-        <div>
-          <p className="product-category">{categoryName}</p>
-          <h2>{product.name}</h2>
-          <p className="product-detail-price">R {Number(product.price).toFixed(2)}</p>
-          <p>{product.stock > 0 ? `${product.stock} available` : "Out of stock"}</p>
-          <p className="product-detail-description">{product.description || "Built for anime fans who want standout style, premium comfort, and a statement look that feels as bold as their favorite series."}</p>
-        </div>
-      </div>
-
-      {relatedProducts.length > 0 && (
-        <div className="related-products">
-          <div className="products-section-header related-header">
-            <div>
-              <p className="section-label">MORE IN</p>
-              <h2>{categoryName}</h2>
-            </div>
-          </div>
-
-          <div className="product-grid related-grid">
-            {relatedProducts.map((relatedProduct) => {
-              const relatedImage = relatedProduct.productImage
-                ? `data:image/jpeg;base64,${relatedProduct.productImage}`
-                : null;
-
-              return (
-                <Link
-                  key={relatedProduct.productId}
-                  className="product-card"
-                  to={`/products/${relatedProduct.productId}`}
-                >
-                  <div className="product-image">
-                    {relatedImage ? <img src={relatedImage} alt={relatedProduct.name} /> : <span>⚔</span>}
-                  </div>
-                  <div className="product-details">
-                    <p className="product-category">{relatedProduct.category?.name || "Anime Collection"}</p>
-                    <h3>{relatedProduct.name}</h3>
-                    <div className="product-meta">
-                      <strong>R {Number(relatedProduct.price).toFixed(2)}</strong>
-                      <span className={relatedProduct.stock > 0 ? "in-stock" : "out-of-stock"}>
-                        {relatedProduct.stock > 0 ? `${relatedProduct.stock} in stock` : "Out of stock"}
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      )}
-    </section>
-  );
+    <div className="content-page product-detail-page"><Link to="/catalog" className="back-link"><ArrowLeft size={16} /> Back to catalog</Link><div className="detail-layout"><div className="detail-media"><img src={resolveImage(product)} alt={product.name} /></div><div className="detail-copy"><span className="eyebrow">{product.category?.name || "ANIME GEAR"}</span><h1>{product.name}</h1><div className="detail-price">{money(product.price)}</div><p className="detail-description">A fan-ready piece from the AnimeStore collection.</p><div className="detail-stock"><span className={stock > 0 ? "stock-dot live" : "stock-dot"}></span>{stock > 0 ? `${stock} units available` : "Currently out of stock"}</div><div className="qty-control"><button onClick={() => setQuantity(value => Math.max(1, value - 1))} disabled={stock <= 0}><Minus size={17} /></button><span>{quantity}</span><button onClick={() => setQuantity(value => Math.min(stock, value + 1))} disabled={stock <= 0}><Plus size={17} /></button></div><button className="primary-button wide" onClick={add} disabled={busy || stock <= 0}><ShoppingBag size={18} />{busy ? "Adding..." : "Add to cart"}</button>{message && <div className="form-alert success">{message}</div>}{error && <div className="form-alert error">{error}</div>}<div className="detail-points"><span><Truck size={17} /><b>Delivery</b><small>Fast and simple checkout.</small></span><span><CheckCircle2 size={17} /><b>Availability</b><small>Stock is checked before checkout.</small></span><span><ShieldCheck size={17} /><b>Quality</b><small>Clear product details and easy shopping.</small></span></div></div></div></div>
+  )
 }
-
-export default ProductDetailsPage;

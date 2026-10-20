@@ -1,127 +1,27 @@
-import { useState, useEffect } from 'react';
-import { orderApi } from '../utils/api';
+import { ChevronDown, ChevronRight, ClipboardCheck, Package, Truck } from "lucide-react"
+import { useEffect, useState } from "react"
+import { Link, useSearchParams } from "react-router-dom"
+import { orderApi, orderItemApi } from "../services/api"
+import { useAuth } from "../context/AuthContext"
+import Loading from "../components/Loading"
+import EmptyState from "../components/EmptyState"
+import { money, safeArray, statusClass } from "../utils/helpers"
 
-function OrdersPage() {
-  const [orders, setOrders] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const statusIcon = status => { const key = String(status || "").toUpperCase(); if (key === "DELIVERED") return Truck; if (key === "PLACED" || key === "PROCESSING") return ClipboardCheck; return Package }
 
-  // Form State
-  const [formData, setFormData] = useState({
-    orderId: '',
-    orderDate: '',
-    orderTotalAmount: 0,
-    status: 'PENDING',
+export default function OrdersPage() {
+  const { user } = useAuth()
+  const [searchParams] = useSearchParams()
+  const [orders, setOrders] = useState([])
+  const [items, setItems] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [open, setOpen] = useState(null)
 
-    orderItems: [{ orderItemId: `ITEM-${Date.now()}`, itemDescription: 'Default Item', itemQuantity: 1, unitPrice: 10 }]
-  });
+  useEffect(() => { Promise.all([orderApi.getAll(), orderItemApi.getAll()]).then(([ordersResponse, itemsResponse]) => { setOrders(safeArray(ordersResponse.data).filter(order => order.userId === user.userId).sort((a,b) => String(b.orderDate).localeCompare(String(a.orderDate)))); setItems(safeArray(itemsResponse.data)) }).catch(() => {}).finally(() => setLoading(false)) }, [user.userId])
 
-  // Fetch orders on component mount
-  useEffect(() => {
-    fetchOrders();
-  }, []);
+  if (loading) return <div className="content-page"><Loading label="Loading your orders..." /></div>
+  if (!orders.length) return <div className="content-page narrow"><EmptyState title="No orders yet." text="Your completed checkout orders will appear here." action={<Link to="/catalog" className="primary-button">Start shopping</Link>} /></div>
 
-  const fetchOrders = async () => {
-    try {
-      setLoading(true);
-      const response = await orderApi.getAll();
-      setOrders(response.data || []);
-      setError(null);
-    } catch (err) {
-      setError('Failed to fetch orders. Is the backend running?');
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await orderApi.create(formData);
-      alert('Order created successfully!');
-      fetchOrders(); // Refresh list
-      // Reset form
-      setFormData({ orderId: '', orderDate: '', orderTotalAmount: 0, status: 'PENDING', orderItems: [{ orderItemId: `ITEM-${Date.now()}`, itemDescription: 'Default Item', itemQuantity: 1, unitPrice: 10 }] });
-    } catch (err) {
-      alert('Error creating order: ' + err.message);
-    }
-  };
-
-  const handleDelete = async (id) => {
-    if (window.confirm('Are you sure you want to delete this order?')) {
-      try {
-        await orderApi.delete(id);
-        fetchOrders(); // Refresh list
-      } catch (err) {
-        alert('Error deleting order');
-      }
-    }
-  };
-
-  if (loading) return <p>Loading orders...</p>;
-
-  return (
-      <div className="page-container">
-        <h2>Manage Orders</h2>
-
-        {error && <p className="error-msg">{error}</p>}
-
-        {/* Create Order Form */}
-        <div className="card">
-          <h3>Create New Order</h3>
-          <form onSubmit={handleSubmit} className="form-grid">
-            <input type="text" name="orderId" placeholder="Order ID" value={formData.orderId} onChange={handleInputChange} required />
-            <input type="text" name="orderDate" placeholder="Date (YYYY-MM-DD)" value={formData.orderDate} onChange={handleInputChange} required />
-            <input type="number" name="orderTotalAmount" placeholder="Total Amount" value={formData.orderTotalAmount} onChange={handleInputChange} required />
-            <select name="status" value={formData.status} onChange={handleInputChange}>
-              <option value="PENDING">PENDING</option>
-              <option value="SHIPPED">SHIPPED</option>
-              <option value="COMPLETED">COMPLETED</option>
-            </select>
-            <button type="submit" className="btn-primary">Create Order</button>
-          </form>
-        </div>
-
-        {/* Orders List */}
-        <div className="card">
-          <h3>Order List</h3>
-          <table className="data-table">
-            <thead>
-            <tr>
-              <th>Order ID</th>
-              <th>Date</th>
-              <th>Total</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            {orders.length === 0 ? (
-                <tr><td colSpan="5">No orders found.</td></tr>
-            ) : (
-                orders.map((order) => (
-                    <tr key={order.orderId}>
-                      <td>{order.orderId}</td>
-                      <td>{order.orderDate}</td>
-                      <td>${order.orderTotalAmount}</td>
-                      <td><span className={`status ${order.status.toLowerCase()}`}>{order.status}</span></td>
-                      <td>
-                        <button onClick={() => handleDelete(order.orderId)} className="btn-danger">Delete</button>
-                      </td>
-                    </tr>
-                ))
-            )}
-            </tbody>
-          </table>
-        </div>
-      </div>
-  );
+  const placed = searchParams.get("placed")
+  return <div className="content-page"><section className="page-intro compact"><span className="eyebrow">ORDER HISTORY</span><h1>Keep an eye on your orders.</h1><p>{orders.length} order{orders.length === 1 ? "" : "s"} linked to your customer account.</p></section>{placed && <div className="form-alert success">Order <b>{placed}</b> was created successfully. Your order has been placed successfully.</div>}<div className="order-list">{orders.map(order => { const Icon = statusIcon(order.status); const orderItems = items.filter(item => item.order?.orderId === order.orderId); const isOpen = open === order.orderId; return <article className="order-card" key={order.orderId}><button className="order-card-head" onClick={() => setOpen(isOpen ? null : order.orderId)}><div className="order-id"><span className="order-icon"><Icon size={18} /></span><div><span className="eyebrow tiny">ORDER</span><h3>#{order.orderId}</h3><p>{order.orderDate ? new Date(order.orderDate).toLocaleString() : "Date not provided"}</p></div></div><div className="order-head-right"><span className={`status-badge ${statusClass(order.status)}`}>{order.status || "PROCESSING"}</span><strong>{money(order.orderTotalAmount)}</strong>{isOpen ? <ChevronDown size={18} /> : <ChevronRight size={18} />}</div></button>{isOpen && <div className="order-card-detail"><div><span className="eyebrow tiny">DELIVERY</span><p>{order.shippingAddress}</p></div>{orderItems.length ? <div className="order-item-list">{orderItems.map(item => <div key={item.orderItemId}><span>{item.itemDescription}</span><span>× {item.itemQuantity}</span><strong>{money(Number(item.unitPrice) * Number(item.itemQuantity))}</strong></div>)}</div> : <div className="muted">Your items are listed with this order.</div>}<div className="payment-receipt"><span className="eyebrow tiny">PAYMENT</span><b>{localStorage.getItem(`animestore-payment-${order.orderId}`) ? JSON.parse(localStorage.getItem(`animestore-payment-${order.orderId}`)).method : "Checkout confirmed"}</b><small>Payment method selected at checkout.</small></div></div>}</article> })}</div></div>
 }
-
-export default OrdersPage;
