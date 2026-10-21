@@ -1,4 +1,4 @@
-import { Filter, Search, SlidersHorizontal, Sparkles, X } from "lucide-react"
+import { Search, SlidersHorizontal, Sparkles, X } from "lucide-react"
 import { useEffect, useMemo, useState } from "react"
 import { useSearchParams } from "react-router-dom"
 import ProductCard from "../components/ProductCard"
@@ -87,7 +87,14 @@ export default function ProductsPage() {
           {query && <button onClick={() => { setLocalSearch(""); setFilter("q", "") }} className="clear-filter"><X size={15} /></button>}
         </div>
         <div className="filter-row">
-          <label><span><Filter size={15} /> Category</span><select value={category} onChange={event => setFilter("category", event.target.value)}><option value="all">All categories</option>{categories.map(item => <option key={item.categoryId ?? item.name} value={item.name}>{item.name}</option>)}</select></label>
+          <div className="category-chips">
+            <button className={category === "all" ? "chip active" : "chip"} onClick={() => setFilter("category", "all")}>All</button>
+            {categories.map(item => (
+                <button key={item.categoryId ?? item.name}
+                        className={normalize(category) === normalize(item.name) ? "chip active" : "chip"}
+                        onClick={() => setFilter("category", item.name)}>{item.name}</button>
+            ))}
+          </div>
           <label><span><SlidersHorizontal size={15} /> Stock</span><select value={stock} onChange={event => setFilter("stock", event.target.value)}><option value="all">All stock</option><option value="available">Available</option><option value="out">Out of stock</option></select></label>
         </div>
       </section>

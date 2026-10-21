@@ -265,4 +265,7 @@ video {
   .product-card:hover .product-media img {
     transform: none;
   }
+  .category-chips{display:flex;flex-wrap:wrap;gap:8px;flex:1}
+  .chip{padding:8px 14px;border:1px solid #28384b;border-radius:999px;background:#0a131d;color:#aab6c3;font-size:12px;font-weight:700}
+  .chip.active{border-color:rgba(85,216,228,.4);background:rgba(85,216,228,.08);color:var(--cyan)}
 }
