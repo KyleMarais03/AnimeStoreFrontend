@@ -13,7 +13,7 @@ const fallback = [
 export default function AllCategoriesPage() {
   const [products, setProducts] = useState([])
 
-  useEffect(() => {
+  useEffect(  () => {
     let active = true
     productApi.getAll()
       .then(response => {
