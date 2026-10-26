@@ -122,7 +122,7 @@ export const fallbackProductImage = product => {
     return categoryItems[seed % categoryItems.length].imagePath
   }
 
-  return "/brand-logo.png"
+  return "/products/brand-logo.png"
 }
 
 const exactCatalogImage = product => {
@@ -154,5 +154,5 @@ export const categoryCoverImage = (categoryName, products = []) => {
   const fromCatalog = productCatalog.find(
       item => normalize(item.category) === normalize(categoryName)
   )
-  return fromCatalog?.imagePath || "/brand-logo.png"
+  return fromCatalog?.imagePath || "/products/brand-logo.png"
 }

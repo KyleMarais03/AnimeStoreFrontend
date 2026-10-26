@@ -1,4 +1,4 @@
-import { Search, SlidersHorizontal, Sparkles, X } from "lucide-react"
+import { Search, SlidersHorizontal, X } from "lucide-react"
 import { useEffect, useMemo, useState } from "react"
 import { useSearchParams } from "react-router-dom"
 import ProductCard from "../components/ProductCard"
@@ -77,7 +77,6 @@ export default function ProductsPage() {
     <div className="content-page catalog-page">
       <section className="page-intro compact">
         <div><span className="eyebrow">CATALOG</span><h1>Find your next favourite.</h1><p>Browse the latest items in the store.</p></div>
-        <div className="catalog-live"><Sparkles size={16} /> {filtered.length} products</div>
       </section>
       <section className="filter-panel">
         <div className="search-box">

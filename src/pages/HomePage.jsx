@@ -4,15 +4,15 @@ import { useEffect, useState } from "react"
 import { productApi } from "../services/api"
 import ProductCard from "../components/ProductCard"
 import Loading from "../components/Loading"
-import { categoryCoverImage, safeArray } from "../utils/helpers"
+import { safeArray } from "../utils/helpers"
+import { categoryCoverImage } from "../utils/categoryCovers"
 
 const categoryMeta = [
-  ["Clothing", "T-shirts, hoodies and everyday wear"],
-  ["Collectibles", "Figures and favourites for your shelf"],
-  ["Art", "Posters and prints for your space"],
-  ["Accessories",  "Small extras for every fan"]
-
-
+  ["Clothing", "Everyday anime streetwear and layered essentials"],
+  ["Accessories", "Pins, keychains, wallets and finishing details"],
+  ["Tech", "Desk gear, phone pieces and gaming add-ons"],
+  ["Art", "Posters, prints and visual wall pieces"],
+  ["Collectibles", "Figures, stands and shelf-ready favourites"]
 ]
 
 export default function HomePage() {
@@ -66,13 +66,26 @@ export default function HomePage() {
           <div><span className="eyebrow">SHOP</span><h2>Popular categories</h2></div>
           <Link to="/all-categories" className="text-link">View all <ArrowRight size={16} /></Link>
         </div>
-        <div className="category-strip">
-          {categoryMeta.map(([name, description], index) => (
-            <Link className="category-tile" key={name} to={`/catalog?category=${encodeURIComponent(name)}`}>
-              <span className="tile-number">0{index + 1}</span>
-              <div className="category-tile-cover"><img src={categoryCoverImage(name, products)} alt={`${name} product`} loading="lazy" /></div>
-              <div className="category-tile-copy"><h3>{name}</h3><p>{description}</p></div>
-              <ChevronRight size={19} />
+        <div className="category-grid">
+          {categoryMeta.map(([name, description]) => (
+            <Link className="category-card-large" key={name} to={`/catalog?category=${encodeURIComponent(name)}`}>
+              <div className="category-card-cover">
+                <img
+                  src={categoryCoverImage(name, products)}
+                  alt={name}
+                  loading="lazy"
+                  decoding="async"
+                  onError={event => {
+                    if (event.currentTarget.dataset.fallback === "true") return
+                    event.currentTarget.dataset.fallback = "true"
+                    event.currentTarget.src = "/products/brand-logo.png"
+                  }}
+                />
+              </div>
+              <div className="category-card-copy">
+                <h3>{name}</h3>
+                <p>{description}</p>
+              </div>
             </Link>
           ))}
         </div>
