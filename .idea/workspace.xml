@@ -7,7 +7,76 @@
     <option name="selectedModelId" value="auto" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36543244-f81b-4712-aed1-854e0bed3e84" name="Changes" comment="3s" />
+    <list default="true" id="36543244-f81b-4712-aed1-854e0bed3e84" name="Changes" comment="frontend fix">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eslint.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/-beanie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/-tee.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/NursingDept_Agile_Roadmap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/NursingDept_Storyboard_Flow (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/NursingDept_Storyboard_Flow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/NursingDept_Storyboard_Presentation.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/NursingDept_UI_Wireframes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/anime5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/animestorelogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/aot-beanie.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/beanie.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/ce-tee.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/eanie.avif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/ee.avif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/hero1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/hero2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/hero3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/homebackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/naruto-hoodie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/naruto-hoodie.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/naruto.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/nepiece-tee.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/o-hoodie.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/onepiece-tee.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/ot-beanie.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/pikachu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/ruto.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/samurai.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/t-beanie.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/tee.avif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/to-hoodie.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/uto-hoodie.avif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/zenitsu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/vite.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/react.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ChatbotWidget.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ChatbotWidget.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/context/CartContext.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layouts/MainLayout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AdminOrders.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Cart.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Catalog.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Checkout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/CustomersPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Designs.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/InventoryPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/NavBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/OrderDetails.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/OrderSuccess.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/OrdersPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ProductDetail.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ProductsPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/SignIn.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/SignUp.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/UserDashboard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/adminDashboard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +102,69 @@
     &quot;accountId&quot;: &quot;dec2a597-4fb9-4d5a-986e-cc4cdbd3e350&quot;
   }
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0000006559615489" />
+      <entry key="MS500" value="1.06676943527189" />
+      <entry key="S2" value="1.796813630026791" />
+      <entry key="S5" value="2.3749885122125076" />
+      <entry key="S10" value="2.6564638013866606" />
+      <entry key="S30" value="2.87775899862081" />
+      <entry key="S60" value="2.9378559235264325" />
+      <entry key="M2" value="2.968667538866728" />
+      <entry key="M5" value="2.9874039247439947" />
+      <entry key="M10" value="2.993691397723432" />
+      <entry key="M15" value="2.995791913766936" />
+      <entry key="M30" value="2.9978947802704674" />
+      <entry key="H1" value="2.998947095808979" />
+      <entry key="H2" value="2.999473474301288" />
+      <entry key="H4" value="2.9997367187471387" />
+      <entry key="D1" value="2.999956117234918" />
+      <entry key="W1" value="2.999993730970954" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9526386016516538" />
+      <entry key="MS500" value="1.0560107500044897" />
+      <entry key="S2" value="1.791083581988933" />
+      <entry key="S5" value="2.3717331117895744" />
+      <entry key="S10" value="2.6546014810512033" />
+      <entry key="S30" value="2.877076724182035" />
+      <entry key="S60" value="2.937506434371198" />
+      <entry key="M2" value="2.968490653192371" />
+      <entry key="M5" value="2.9873326496673647" />
+      <entry key="M10" value="2.993655672799172" />
+      <entry key="M15" value="2.9957680776881244" />
+      <entry key="M30" value="2.997882852488836" />
+      <entry key="H1" value="2.9989411294805595" />
+      <entry key="H2" value="2.999470490527422" />
+      <entry key="H4" value="2.9997352267077586" />
+      <entry key="D1" value="2.999955868540512" />
+      <entry key="W1" value="2.9999936954426634" />
+    </decayedShown>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -166,6 +298,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="3" />
     <MESSAGE value="3s" />
-    <option name="LAST_COMMIT_MESSAGE" value="3s" />
+    <MESSAGE value="frontend fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="frontend fix" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
