@@ -1,4 +1,0 @@
-/* Add to the end of App.css if these selectors are not already present. */
-.selected-product-summary { display:flex; flex-direction:column; gap:6px; min-width:170px; color:#c4ced8; }
-.selected-product-summary img { width:64px; height:64px; object-fit:contain; border-radius:8px; background:#fff; }
-.order-item-editor select { width:100%; padding:12px 13px; border:1px solid #33455a; border-radius:9px; background:#080d15; color:#fff; }
