@@ -1,0 +1,1 @@
+Place the image files referenced by src/data/productCatalog.js in this folder. Keep filenames exactly the same.
