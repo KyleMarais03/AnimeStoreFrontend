@@ -8,74 +8,142 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36543244-f81b-4712-aed1-854e0bed3e84" name="Changes" comment="frontend fix">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eslint.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/-beanie.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/-tee.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/NursingDept_Agile_Roadmap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/NursingDept_Storyboard_Flow (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/NursingDept_Storyboard_Flow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/NursingDept_Storyboard_Presentation.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/NursingDept_UI_Wireframes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/anime5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/animestorelogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/aot-beanie.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/beanie.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/ce-tee.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/eanie.avif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/ee.avif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/hero1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/hero2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/hero3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/homebackground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/naruto-hoodie.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/naruto-hoodie.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/naruto.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/nepiece-tee.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/o-hoodie.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/onepiece-tee.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/ot-beanie.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/pikachu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/ruto.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/samurai.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/t-beanie.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/tee.avif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/to-hoodie.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uto-hoodie.avif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/zenitsu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vite.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/react.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ChatbotWidget.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ChatbotWidget.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/context/CartContext.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/MainLayout.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/AdminOrders.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Cart.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Catalog.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Checkout.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/CustomersPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Designs.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/InventoryPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/NavBar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/OrderDetails.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/OrderSuccess.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/OrdersPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ProductDetail.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ProductsPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SignIn.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SignUp.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/UserDashboard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/adminDashboard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/.idea/AnimeStoreFrontend_WHITE_SCREEN_FIXED.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/PUT_PRODUCT_IMAGES_HERE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_high_quality_product_shot_on_a_white_back.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_high_resolution_product_style_image_on_a.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_high_resolution_product_style_studio_ima.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_product_packaging_style_studio_photo_on_a.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_product_photo_on_a_white_background_of_a_s.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_product_photo_on_white_background_a_high.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_product_photo_style_image_on_a_white_backg.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_product_photo_style_studio_shot_on_a_plain.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_product_photography_isolated_studio_scene.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_product_shot_style_image_on_a_white_backgr.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_product_studio_photograph_on_a_white_backg.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_product_studio_style_image_on_a_white_back.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_product_style_poster_image_on_a_white_back.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_product_style_studio_image_on_a_plain_whit.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_product_style_studio_image_on_a_white_back.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_product_style_studio_photo_on_a_plain_whit.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_product_style_studio_photo_on_a_white_back.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_product_style_studio_shot_on_a_plain_white.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_product_style_studio_shot_on_a_white_backg.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_studio_product_photo_on_a_plain_white_back.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_studio_product_photo_on_a_white_background.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_studio_product_shot_figurine_photo_a_hi.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_studio_product_shot_on_a_plain_white_backg.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_studio_product_shot_on_a_pure_white_backgr.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_studio_product_shot_on_a_white_background.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_studio_style_high_resolution_product_por.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_studio_style_product_image_on_a_plain_whi.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_studio_style_product_photo_of_a_naruto_an.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_studio_style_product_photo_on_a_pure_whit.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_studio_style_product_photo_on_a_white_bac.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_well_lit_bedroom_room_interior_scene_with.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_well_lit_product_style_image_on_a_neutral.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_clean_white_background_studio_shot_of_a_detailed.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_close_up_high_detail_angled_desk_desktop_setup.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_close_up_high_quality_moody_product_photograph.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_cozy_bedroom_bed_scene_photographed_from_above_a.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_cozy_bedroom_bedside_scene_photographed_in_real.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_cozy_detailed_interior_scene_of_an_anime_figure.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_cozy_dimly_lit_indoor_tabletop_scene_a_close_u.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_cozy_indoor_product_photo_style_scene_a_close_u.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_cozy_living_room_scene_with_a_large_anime_blanke.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_cozy_modern_bedroom_scene_shot_from_a_slightly.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_cozy_modern_living_room_style_scene_with_a_large.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_cozy_moody_anime_themed_room_desk_setup_scene.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_cozy_moody_cinematic_bedroom_gaming_room_inter.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_crisp_colorful_product_photography_scene_on_a_w.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_crisp_colorful_product_still_life_scene_on_a_ta.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_crisp_high_quality_product_collector_photo_scen.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_crisp_high_quality_product_photography_scene_of.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_crisp_realistic_well_lit_desk_stationery_produ.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_crisp_well_lit_close_up_product_photo_setup_on.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_crisp_well_lit_indoor_product_room_scene_showin.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_crisp_well_lit_indoor_product_room_scene_with_a.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_crisp_well_lit_product_desk_still_life_scene_fe.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_crisp_well_lit_product_photography_scene_close.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_crisp_well_lit_product_photography_scene_on_a_t.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_crisp_well_lit_product_style_indoor_scene_a_cl.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_crisp_well_lit_product_style_photo_of_anime_the.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_detailed_cinematic_neon_lit_anime_themed_gamin.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_detailed_cinematic_product_photography_scene_of.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_detailed_cozy_high_quality_still_life_desktop.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_detailed_product_still_scene_of_an_anime_themed.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_detailed_realistic_product_photography_scene_a.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_detailed_well_lit_close_up_desk_stationery_scen.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_dramatic_anime_style_poster_illustration_highly.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_dynamic_anime_poster_style_illustration_on_a_whi.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_high_quality_anime_poster_style_illustration_on.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_high_quality_close_up_product_photography_scene.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_high_quality_close_up_product_still_life_scene.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_high_quality_studio_product_photo_figure_render.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_highly_detailed_studio_lit_product_figure_rende.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_sharp_cinematic_product_photography_scene_on_a.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_sharp_high_detail_product_style_close_up_scene.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_sharp_well_lit_indoor_product_style_photo_scene.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_vibrant_high_contrast_anime_poster_print_illust.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/a_vivid_high_detail_cinematic_neon_lit_anime_th.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/barou-graphic-tee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/brand-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/brand-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/dbz-hoodie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/dual-panel-hoodie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/gojo-blue-tee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/indoor_room_desk_scene_crisp_product_style_photo.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/interior_room_scene_a_cozy_anime_themed_wall_disp.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/luffy-jersey-tee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/product_style_studio_photo_a_single_clothing_item.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/straw-hat-tee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/studio_product_photo_on_a_clean_white_background.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/studio_product_photo_on_a_plain_white_background.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/studio_style_product_photo_on_a_clean_white_backgr.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/studio_style_product_portrait_image_on_a_clean_whi.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/public/products/sukuna-graphic-tee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/App.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/components/CartIcon.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/components/EmptyState.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/components/Loading.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/components/ProductCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/context/AuthContext.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/context/CartContext.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/data/productCatalog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/layout/AdminLayout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/layout/CustomerLayout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/main.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/AccountPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/AllCategoriesPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/CartPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/CheckoutPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/DashboardPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/HomePage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/OrdersPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/ProductDetailsPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/ProductsPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/SignInPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/SignUpPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/admin/AdminCategoriesPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/admin/AdminDashboard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/admin/AdminInventoryPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/admin/AdminOrdersPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/admin/AdminProductsPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/pages/admin/AdminUsersPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/routing/RouteGuards.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/services/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/src/utils/helpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeStoreFrontend/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,12 +164,12 @@
     &quot;assignee&quot;: &quot;PhihlelloJunaid&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/PhihlelloJunaid/AnimeStoreFrontend.git&quot;,
-    &quot;accountId&quot;: &quot;dec2a597-4fb9-4d5a-986e-cc4cdbd3e350&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/PhihlelloJunaid/AnimeStoreFrontend.git",
+    "accountId": "9fdf5a1d-e595-4090-b0a3-23f911da4e6d"
   }
-}</component>
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -187,27 +255,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/MNISIV/Documents/AnimeStoreFrontend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\phihl\Documents\Projects\AnimeStoreFrontend\public\products" />
@@ -230,6 +303,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="36543244-f81b-4712-aed1-854e0bed3e84" name="Changes" comment="" />
@@ -237,6 +318,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1789737542886</updated>
+      <workItem from="1794502854640" duration="260000" />
     </task>
     <task id="LOCAL-00001" summary="3">
       <option name="closed" value="true" />
